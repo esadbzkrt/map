@@ -4,10 +4,7 @@ import {BiLogOut} from 'react-icons/bi';
 import {AiOutlineUser} from 'react-icons/ai';
 import {useState} from "react";
 
-function Header() {
-
-    const [login, setLogin] = useState(true);
-
+function Header(login) {
     return (
         <div className="header">
             <div className="header-logo">
@@ -19,7 +16,6 @@ function Header() {
                     <AiOutlineUser size="1.5rem"/>
                     <h3>username</h3>
                     <BiLogOut size="1.5rem"/>
-                    <h3>Logout</h3>
 
                 </div>}
 
