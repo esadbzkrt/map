@@ -1,28 +1,28 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username": "admin",
-            "password": "admin"
-        },
-        {
-            "id": 2,
-            "username": "user",
-            "password": "user"
-        }
-    ],
-    "locations": [
-        {
-            "id": 1,
-            "name": "Home",
-            "latitude": 51.5074,
-            "longitude": 0.1278
-        },
-        {
-            "id": 2,
-            "name": "Work",
-            "latitude": 51.5074,
-            "longitude": 0.1278
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "user"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Home",
+      "latitude": 51.5074,
+      "longitude": 0.1278
+    },
+    {
+      "id": 2,
+      "name": "Work",
+      "latitude": 51.5074,
+      "longitude": 0.1278
+    }
+  ]
 }
