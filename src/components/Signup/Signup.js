@@ -1,10 +1,11 @@
 import React , {useEffect, useRef} from 'react'
 import axios from 'axios'
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Signup(props) {
 
-    useEffect(() => {
+    useEffect((e)  => {
+        e.preventDefault();
         axios.get('http://localhost:8000/users')
         .then(res => {
             console.log(res.data.length)
@@ -14,6 +15,10 @@ function Signup(props) {
         })
     }, [])
 
+    let navigate = useNavigate();
+    const route = () => {
+        navigate('/login')
+    }
 
     const onSubmit = async e => {
     e.preventDefault();
@@ -23,7 +28,7 @@ function Signup(props) {
             username: e.target.username.value,
             password: e.target.password.value,
         });
-        props.history.push('/login');
+        route();
     } catch (error) {
         console.log(error)
     }
