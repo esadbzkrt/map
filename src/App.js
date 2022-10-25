@@ -14,14 +14,15 @@ import { useState } from 'react';
 
 function App() {
 
+    const [user, setUser] = useState();
 
     return (
         <Router>
         <div className="App">
-            <Header />
+            <Header user={user} setUser={setUser}  />
             <Routes>
-                <Route path="/" exact element={<Map/>} />
-                <Route path="/login" exact element={<Login/>} />
+                <Route path="/" exact element={<Login user={user} setUser={setUser} />} />
+                <Route path="/map" exact element={<Map user={user}/>} />
                 <Route path="/signup" exact element={<Signup/>} />
             </Routes>
         </div>

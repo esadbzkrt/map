@@ -14,15 +14,27 @@
   "locations": [
     {
       "id": 1,
-      "name": "Home",
-      "latitude": 51.5074,
-      "longitude": 0.1278
+      "name": "AOC",
+      "lat": 39.949646427436,
+      "lng": 32.80743976222251
     },
     {
       "id": 2,
-      "name": "Work",
-      "latitude": 51.5074,
-      "longitude": 0.1278
+      "name": "Sıhhiye",
+      "latitude": 39.92815978867734,
+      "longitude": 32.85495908634817
+    },
+    {
+      "id": 3,
+      "name": "Sıhhiye",
+      "latitude": 39.920899607105426,
+      "longitude": 32.85401045460547
+    },
+    {
+      "id": 4,
+      "name": "Keçiören Şelalesi",
+      "latitude": 39.978538973661294,
+      "longitude": 32.86684477979923
     }
   ]
 }

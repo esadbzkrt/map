@@ -2,17 +2,17 @@ import './Header.scss'
 import {TbMapSearch} from "react-icons/tb";
 import {BiLogOut} from 'react-icons/bi';
 import {AiOutlineUser} from 'react-icons/ai';
-import {useState} from "react";
-import { Navigate, useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
-function Header(login) {
+function Header(user) {
 
     let navigate = useNavigate();
     const route = () => {
-        navigate('/login')
+        navigate('/')
     }
     const logout = () => {
         localStorage.removeItem('user');
+        user.setUser();
         route();
     }
 
@@ -23,11 +23,15 @@ function Header(login) {
                 <TbMapSearch size="2rem"/>
                 <h1>Map App</h1>
             </div>
-            {login &&
+            {user &&
                 <div className="header-user">
                     <AiOutlineUser size="1.5rem"/>
-                    <h3>username</h3>
-                    <BiLogOut onClick={logout} size="1.5rem"/>
+                    {user.user ? <div>
+                            <h3>{user.user}</h3>
+                            <BiLogOut onClick={logout} size="1.5rem"/>
+                        </div> :
+                        <h3> Login</h3>}
+
 
                 </div>}
 
