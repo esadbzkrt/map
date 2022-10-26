@@ -8,7 +8,7 @@ import {
 import Header from "./components/Header/Header";
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
-import Map from './components/Map/Map';
+import MapPage from './components/MapPage/MapPage';
 import { useState } from 'react';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
             <Header user={user} setUser={setUser}  />
             <Routes>
                 <Route path="/" exact element={<Login user={user} setUser={setUser} />} />
-                <Route path="/map" exact element={<Map user={user}/>} />
+                <Route path="/map" exact element={<MapPage user={user}/>} />
                 <Route path="/signup" exact element={<Signup/>} />
             </Routes>
         </div>

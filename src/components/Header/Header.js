@@ -25,8 +25,8 @@ function Header(user) {
             </div>
 
             <div className="header-user">
-
-                {user.user ? <div className="header-user-container">
+                {localStorage.getItem(user) ?
+                    <div className="header-user-container">
                         <AiOutlineUser size="1.5rem"/>
                         <h4> username: {user.user} | </h4>
                         <div className="header-user-container-logout" onClick={logout}>
