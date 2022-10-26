@@ -23,17 +23,21 @@ function Header(user) {
                 <TbMapSearch size="2rem"/>
                 <h1>Map App</h1>
             </div>
-            {user &&
-                <div className="header-user">
-                    <AiOutlineUser size="1.5rem"/>
-                    {user.user ? <div>
-                            <h3>{user.user}</h3>
-                            <BiLogOut onClick={logout} size="1.5rem"/>
-                        </div> :
-                        <h3> Login</h3>}
+
+            <div className="header-user">
+
+                {user.user ? <div className="header-user-container">
+                        <AiOutlineUser size="1.5rem"/>
+                        <h4> username: {user.user} | </h4>
+                        <div className="header-user-container-logout" onClick={logout}>
+                            <BiLogOut size="1.5rem"/>
+                            <h4>Logout</h4>
+                        </div>
+                    </div> :
+                    <h3> Login</h3>}
 
 
-                </div>}
+            </div>
 
         </div>
     );

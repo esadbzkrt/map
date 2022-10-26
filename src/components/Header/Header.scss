@@ -37,12 +37,18 @@
     padding-left: 1rem;
 
     &-container {
-      background-color: blue;
       height: 100%;
       width: auto;
       display: flex;
       justify-content: center;
+      align-items: center;
+      &-logout{
+        margin-left: 4px;
+        display: flex;
+        justify-content: center;
         align-items: center;
+        cursor: pointer;
+      }
     }
 
   }

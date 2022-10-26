@@ -18,7 +18,7 @@ function Login(props) {
                 res.data.filter(user => {
                     if (user.username === e.target.username.value && user.password === e.target.password.value) {
                         localStorage.setItem('user', user.username);
-                        props.setUser(user.username);
+                        props.setUser(localStorage.getItem('user'));
                         route();
                     }
                 }
@@ -31,7 +31,7 @@ function Login(props) {
 
 
     return (
-        props.user ?
+        !localStorage.getItem('user') ?
         <div className='login'>
             <h1>Login</h1>
             <form onSubmit={onSubmit}>
@@ -44,7 +44,8 @@ function Login(props) {
             <h5>Kayıt ol </h5>
         </div>
             :
-            <Navigate to={'/map'} />
+            <Navigate to="/map" />
+
     )
 }
 

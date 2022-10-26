@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import {Navigate} from "react-router-dom";
-import axios from "axios";
+
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const containerStyle = {
   width: '900px',
@@ -13,30 +14,12 @@ const center = {
   lng: 32.859741
 };
 
-let locations;
-
 
 function Map(props) {
-
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(async () => {
-          locations = await axios.get('http://localhost:8000/locations')
-              .then(res => {
-                  console.log(locations)
-              })
-              .catch(err => {
-                      console.log(err)
-
-                  }
-              )
-      }
-    , [])
-
   return (
-      props.user ?
+      localStorage.getItem('user') ?
       <LoadScript
-          googleMapsApiKey="AIzaSyDwe7mK3t7whKxxe7871beT6frDf_2bgYg"
+          googleMapsApiKey= {apiKey}
       >
         <GoogleMap
             mapContainerStyle={containerStyle}
