@@ -79,7 +79,6 @@ function Map(user) {
                 <>
                     {locations.map(item => {
                         return (
-
                             <Marker
                                 key={item.name}
                                 position={item.location}
