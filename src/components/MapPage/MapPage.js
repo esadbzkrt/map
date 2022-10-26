@@ -6,14 +6,12 @@ function MapPage(props) {
 
 
     return (
+
         <div className="container">
             <div className="container-map">
                 <Map/>
             </div>
             <div className="container-map-info">
-
-
-
 
             </div>
         </div>

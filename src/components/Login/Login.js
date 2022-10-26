@@ -17,8 +17,9 @@ function Login(props) {
                 // eslint-disable-next-line array-callback-return
                 res.data.filter(user => {
                     if (user.username === e.target.username.value && user.password === e.target.password.value) {
+                        props.setUser(user.username);
+                        props.setIsLogin(true);
                         localStorage.setItem('user', user.username);
-                        props.setUser(localStorage.getItem('user'));
                         route();
                     }
                 }

@@ -4,7 +4,9 @@ import {BiLogOut} from 'react-icons/bi';
 import {AiOutlineUser} from 'react-icons/ai';
 import {useNavigate} from 'react-router-dom';
 
-function Header(user) {
+function Header(props) {
+
+    const { setUser, setIsLogin} = props;
 
     let navigate = useNavigate();
     const route = () => {
@@ -12,7 +14,8 @@ function Header(user) {
     }
     const logout = () => {
         localStorage.removeItem('user');
-        user.setUser();
+        setUser(null);
+        setIsLogin(false);
         route();
     }
 
@@ -20,23 +23,21 @@ function Header(user) {
     return (
         <div className="header">
             <div className="header-logo">
-                <TbMapSearch size="2rem"/>
+                <TbMapSearch size="32px"/>
                 <h1>Map App</h1>
             </div>
 
             <div className="header-user">
-                {localStorage.getItem(user) ?
+                {props.isLogin?
                     <div className="header-user-container">
-                        <AiOutlineUser size="1.5rem"/>
-                        <h4> username: {user.user} | </h4>
+                        <AiOutlineUser size="24px"/>
+                        <h4> username: {props.user} | </h4>
                         <div className="header-user-container-logout" onClick={logout}>
-                            <BiLogOut size="1.5rem"/>
+                            <BiLogOut size="24px"/>
                             <h4>Logout</h4>
                         </div>
                     </div> :
                     <h3> Login</h3>}
-
-
             </div>
 
         </div>
