@@ -2,12 +2,19 @@ import React from 'react'
 import './Login.scss'
 import axios from 'axios';
 import {Navigate, useNavigate} from 'react-router-dom';
+import signup from "src/components/Signup/Signup";
+
+
 
 function Login(props) {
 
     let navigate = useNavigate();
     const route = () => {
         navigate('/map')
+    }
+
+    function goSignup() {
+        navigate('/signup')
     }
 
     const onSubmit = async e => {
@@ -42,7 +49,7 @@ function Login(props) {
                 <input type='password' name='password' id='password'/>
                 <button type='submit'>Login</button>
             </form>
-            <h5>Kayıt ol </h5>
+            <h5 onClick={goSignup} >Kayıt ol </h5>
         </div>
             :
             <Navigate to="/map" />
