@@ -5,7 +5,6 @@ import { useNavigate} from 'react-router-dom';
 function Signup(props) {
 
 
-
 let navigate = useNavigate();
 const route = () => {
     navigate('/')
@@ -40,7 +39,5 @@ return (
     </div>
 )
 }
-
-
 
 export default Signup
